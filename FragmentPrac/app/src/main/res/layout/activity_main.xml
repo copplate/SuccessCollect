@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tv_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textSize="30sp"
+
+            />
+
+    </LinearLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/btn_add_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="添加fragment"
+        />
+    <Button
+        android:id="@+id/btn_add_fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="添加fragment"
+        />
+    <Button
+        android:id="@+id/btn_add_fragment3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="添加fragment"
+        />
+    <Button
+        android:id="@+id/btn_passdata_by_interface"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="通过接口传数据"
+        />
+    <Button
+        android:id="@+id/btn_goto_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="去往viewpagerActivity"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btn_passdata_by_class"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="通过类传数据"
+        android:textAllCaps="false"
+        />
+
+</LinearLayout>

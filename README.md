@@ -7,3 +7,5 @@
 🐴PreLoadTry1是第一次成功预加载的尝试，取消了视频播放前的效小绿条，方法是在viewpager2的适配器里提前准备好SimpleExoPlayer，不过没法上拉加载更多。
 
 🐴VideoTakePrac是短视频拍摄模块。
+
+🐴FragmentPrac是2022/10模仿子林Android，一个很棒的fragment添加的展示，利用了FragmentContainerview。
