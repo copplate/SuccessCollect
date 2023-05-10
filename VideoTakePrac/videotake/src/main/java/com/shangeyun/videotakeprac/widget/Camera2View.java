@@ -405,6 +405,7 @@ public class Camera2View extends TextureView {
             mVideoPath = String.format("%s/%s.mp4",
                     mContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString(),
                     DateUtil.getNowDateTime());
+            Log.d(TAG, "startRecord: ------camera2view-------" + mVideoPath);
             mMediaRecorder.setOutputFile(mVideoPath); // 设置输出媒体的文件路径
             mMediaRecorder.prepare(); // 媒体录制器准备就绪
 

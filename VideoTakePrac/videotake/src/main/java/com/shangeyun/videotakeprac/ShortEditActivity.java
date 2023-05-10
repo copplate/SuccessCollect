@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.shangeyun.videotakeprac.bean.CommitResponse;
+import com.shangeyun.videotakeprac.bean.ShanGeCommitResponse;
 import com.shangeyun.videotakeprac.constant.UrlConstant;
 import com.shangeyun.videotakeprac.util.BitmapUtil;
 import com.shangeyun.videotakeprac.util.DateUtil;
@@ -125,7 +126,7 @@ public class ShortEditActivity extends AppCompatActivity {
         String address = et_address.getText().toString();
         String label = et_label.getText().toString();
         String desc = et_desc.getText().toString();
-        if (TextUtils.isEmpty(address)) {
+        /*if (TextUtils.isEmpty(address)) {
             Toast.makeText(this, "请先输入视频拍摄地址", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -136,7 +137,7 @@ public class ShortEditActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(desc)) {
             Toast.makeText(this, "请先输入视频的描述", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         // 弹出进度对话框
         mDialog = ProgressDialog.show(this, "请稍候", "正在发布视频信息......");
         String coverPath = String.format("%s/%s.jpg",
@@ -180,14 +181,16 @@ public class ShortEditActivity extends AppCompatActivity {
             public void onResponse(Call call, final Response response) throws IOException { // 请求成功
                 String resp = response.body().string();
                 Log.d("tiktok", "onResponse: -------shortPublish-----" + resp);
-                CommitResponse commitResponse = new Gson().fromJson(resp, CommitResponse.class);
+                ShanGeCommitResponse commitResponse = new Gson().fromJson(resp, ShanGeCommitResponse.class);
+//                CommitResponse commitResponse = new Gson().fromJson(resp, CommitResponse.class);
                 // 回到主线程操纵界面
                 runOnUiThread(() -> {
                     mDialog.dismiss(); // 关闭进度对话框
-                    if ("0".equals(commitResponse.getCode())) {
+                    if ("true".equals(commitResponse.getFlag())) {
+                        Toast.makeText(ShortEditActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
                         finishPublish(); // 结束视频发布动作
                     } else {
-                        Toast.makeText(ShortEditActivity.this, "保存视频信息失败："+commitResponse.getDesc(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShortEditActivity.this, "保存视频信息失败："+commitResponse.getFlag(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -274,10 +277,10 @@ public class ShortEditActivity extends AppCompatActivity {
     private void finishPublish() {
         Toast.makeText(this, "成功发布您的短视频", Toast.LENGTH_SHORT).show();
         // 下面重新打开短视频浏览界面
-        Intent intent = new Intent(this, MainActivity.class);
+        /*Intent intent = new Intent(this, MainActivity.class);
         // 设置启动标志：跳转到新页面时，栈中的原有实例都被清空，同时开辟新任务的活动栈
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
 }

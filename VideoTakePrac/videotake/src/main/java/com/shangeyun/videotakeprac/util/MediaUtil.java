@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
+import androidx.annotation.LongDef;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -117,6 +119,7 @@ public class MediaUtil {
     //获取视频的宽
     public static int getVideoWidth(Context ctx, Uri uri) {
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        Log.d("tiktok", "getVideoWidth: ------------" + uri);
         retriever.setDataSource(ctx, uri); // 将指定Uri设置为媒体数据源
         String sWidth = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
         int width = Integer.parseInt(sWidth);

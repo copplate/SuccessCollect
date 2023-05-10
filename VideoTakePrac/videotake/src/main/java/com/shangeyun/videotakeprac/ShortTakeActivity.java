@@ -1,6 +1,8 @@
 package com.shangeyun.videotakeprac;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraCharacteristics;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.hw.videoprocessor.VideoProcessor;
 import com.hw.videoprocessor.util.VideoProgressListener;
@@ -68,7 +72,35 @@ public class ShortTakeActivity extends AppCompatActivity {
         tv_cost = findViewById(R.id.tv_cost);
         iv_record = findViewById(R.id.iv_record);
         av_progress = findViewById(R.id.av_progress);
-        iv_record.setOnClickListener((v) -> dealRecord()); // 处理录像动作
+        iv_record.setOnClickListener((v) -> {
+            if (ActivityCompat
+                    .checkSelfPermission(ShortTakeActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat
+                    .checkSelfPermission(ShortTakeActivity.this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(ShortTakeActivity.this, new String[]{
+                        android.Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, 1);
+                Toast.makeText(this,"需同意录音及访问相机",Toast.LENGTH_SHORT).show();
+                this.finish();
+                return;
+            } else if (ActivityCompat
+                    .checkSelfPermission(ShortTakeActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(ShortTakeActivity.this, new String[]{
+                        android.Manifest.permission.CAMERA}, 2);
+                Toast.makeText(this,"需同意访问相机",Toast.LENGTH_SHORT).show();
+                this.finish();
+            } else if (ActivityCompat
+                    .checkSelfPermission(ShortTakeActivity.this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(ShortTakeActivity.this, new String[]{
+                        android.Manifest.permission.RECORD_AUDIO}, 3);
+                Toast.makeText(this,"需同意录音",Toast.LENGTH_SHORT).show();
+                this.finish();
+            } else {
+                dealRecord();
+            }
+        }); // 处理录像动作
         findViewById(R.id.btn_album).setOnClickListener(v -> {
             // 创建一个内容获取动作的意图（准备跳到系统视频库）
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -96,7 +128,7 @@ public class ShortTakeActivity extends AppCompatActivity {
                                 .output(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/qwerqq.mp4")
                                 .outWidth(width)
                                 .outHeight(height).
-                                bitrate(1048576)
+                                bitrate(2097152)
                                 .frameRate(20)
                                 .progressListener(new VideoProgressListener() {
                                     @Override
@@ -157,9 +189,10 @@ public class ShortTakeActivity extends AppCompatActivity {
                 isRecording = false;
                 Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
                 mVideoPath = c2v_preview.getVideoPath();
+                Log.d("tiktok", "initCamera: ----------" + mVideoPath);
                 width = MediaUtil.getVideoWidth(this, Uri.parse(mVideoPath));
                 height = MediaUtil.getVideoHeight(this, Uri.parse(mVideoPath));
-                Log.d("tiktok", "initCamera: ----width-----" + width + "----height-----" + height);
+//                Log.d("tiktok", "initCamera: ----width-----" + width + "----height-----" + height);
                 playVideo(); // 播放视频
             });
         });
@@ -184,18 +217,19 @@ public class ShortTakeActivity extends AppCompatActivity {
         av_progress.setVisibility(View.VISIBLE);
         // 定义一个圆弧渐进动画
         Animation animation = new Animation() {
-            private String costDesc=""; // 耗时描述
+            private String costDesc = ""; // 耗时描述
+
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
-                String cost = String.format("%.1f秒", MAX_RECORD_TIME*interpolatedTime);
+                String cost = String.format("%.1f秒", MAX_RECORD_TIME * interpolatedTime);
                 if (!costDesc.equals(cost)) { // 秒数发生变化
                     costDesc = cost;
                     tv_cost.setText(costDesc);
-                    av_progress.setAngle((int) (360*interpolatedTime)); // 设置圆弧的角度
+                    av_progress.setAngle((int) (360 * interpolatedTime)); // 设置圆弧的角度
                 }
             }
         };
-        animation.setDuration(MAX_RECORD_TIME*1000); // 设置动画的持续时间
+        animation.setDuration(MAX_RECORD_TIME * 1000); // 设置动画的持续时间
         tv_cost.startAnimation(animation); // 开始播放动画
     }
 
@@ -208,7 +242,7 @@ public class ShortTakeActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        if (resultCode==RESULT_OK && requestCode==CHOOSE_CODE) { // 从视频库回来
+        if (resultCode == RESULT_OK && requestCode == CHOOSE_CODE) { // 从视频库回来
             if (intent.getData() != null) { // 选择一个视频
                 Uri uri = intent.getData(); // 获得已选择视频的路径对象
                 // 把指定Uri的视频复制一份到内部存储空间，并返回存储路径
@@ -222,11 +256,12 @@ public class ShortTakeActivity extends AppCompatActivity {
     }
 
     private int mCurrentPosition = 0; // 当前的播放位置
+
     @Override
     protected void onResume() {
         super.onResume();
         // 恢复页面时立即从上次断点开始播放视频
-        if (!TextUtils.isEmpty(mVideoPath) && mCurrentPosition>0 && !vv_content.isPlaying()) {
+        if (!TextUtils.isEmpty(mVideoPath) && mCurrentPosition > 0 && !vv_content.isPlaying()) {
             vv_content.seekTo(mCurrentPosition); // 找到指定位置
             vv_content.start(); // 视频视图开始播放
         }
@@ -243,4 +278,23 @@ public class ShortTakeActivity extends AppCompatActivity {
         }
     }
 
+    /*@Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                this.onCreate(new Bundle());
+//                dealRecord();
+            } else {
+                Toast.makeText(this, "获取摄像头权限失败", Toast.LENGTH_SHORT).show();
+            }
+        } else if (requestCode == 2) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                initView();
+                initCamera();
+            } else {
+                Toast.makeText(this, "获取摄像头权限失败", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }*/
 }
