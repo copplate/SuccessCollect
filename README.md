@@ -11,3 +11,5 @@
 🐴FragmentPrac是2022/10模仿子林Android，一个很棒的fragment添加的展示，利用了FragmentContainerview。
 
 🐴GuolinMVVM是第一行代码(2019年出版)MVVM部分的示例代码，每次找API很麻烦，存档一下，虽然有一些API是过时的。
+
+🐴BottomSheetDiaPrac是根据@yechaoa的BottomSheetDialog做的练习，https://blog.csdn.net/yechaoa/article/details/110134991。
