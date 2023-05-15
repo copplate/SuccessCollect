@@ -12,4 +12,6 @@
 
 🐴GuolinMVVM是第一行代码(2019年出版)MVVM部分的示例代码，每次找API很麻烦，存档一下，虽然有一些API是过时的。
 
-🐴BottomSheetDiaPrac是根据@yechaoa的BottomSheetDialog做的练习，https://blog.csdn.net/yechaoa/article/details/110134991。
+🐴BottomSheetDiaPrac是根据@yechaoa的BottomSheetDialog做的练习，https://blog.csdn.net/yechaoa/article/details/110134991
+
+🐴RecyTanTan是根据@史大拿的RecyclerView仿探探效果做的练习，[(91条消息) android 浅析RecyclerView回收复用机制及实战(仿探探效果)_史大拿的博客-CSDN博客](https://blog.csdn.net/weixin_44819566/article/details/121129195?spm=1001.2014.3001.5506)
