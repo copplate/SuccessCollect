@@ -17,3 +17,10 @@
 🐴RecyTanTan是根据@史大拿的RecyclerView仿探探效果做的练习，[(91条消息) android 浅析RecyclerView回收复用机制及实战(仿探探效果)_史大拿的博客-CSDN博客](https://blog.csdn.net/weixin_44819566/article/details/121129195?spm=1001.2014.3001.5506)
 
 🐴GuolinChatBubblePrac是仿照第一行代码写的聊天界面。
+
+🐴SlidePreLoadPrac1是根据gpt的方法实现了视频的本地预缓存，采用了提前准备mediasource的方法，但是此demo只适配了前六个，再上拉加载更多会报bug。缓存之后依然有小绿条，看来时间都花在解码上了（这么说是因为我之前提前准备好SimpleExoplayer的时候是可以秒开没有小绿条的）。
+
+​        而且经过进一步研究，SimpleExoPlayer只能在主线程prepare，而且好像只能同时prepare一个，这就很烦。
+
+🐴ChartPrac1是模仿@路很长写的自定义图表，和一个随手势水平移动的小球，https://juejin.cn/post/6922365337119916040
+
