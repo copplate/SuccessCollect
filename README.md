@@ -24,3 +24,5 @@
 
 🐴ChartPrac1是模仿@路很长写的自定义图表，和一个随手势水平移动的小球，https://juejin.cn/post/6922365337119916040
 
+🐴VideoFrameProgressbar是模仿绘影字幕，用视频帧当滚动轴，同时视频支持离线播放。
+
