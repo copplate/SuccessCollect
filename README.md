@@ -26,3 +26,5 @@
 
 🐴VideoFrameProgressbar是模仿绘影字幕，用视频帧当滚动轴，同时视频支持离线播放。
 
+🐴SlidePreLoadPrac2通过监听SimpleExoplayer的加载进度，获得预加载下一个SimpleExoplayer的时机。
+
