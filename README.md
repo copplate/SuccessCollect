@@ -29,3 +29,6 @@
 🐴SlidePreLoadPrac2通过监听SimpleExoplayer的加载进度，获得预加载下一个SimpleExoplayer的时机。
 
 🐴SpinnerPrac1,问的gpt，通过补间动画，制作了一个旋转箭头弹出三个按钮的动画效果
+
+🐴ConstraintLayoutFlowTest是谷歌官方的flexbox流式布局，很好用。还用了一个ConstraintLayout的flow模式，不过有bug。
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FlexActivity">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        app:flexWrap="wrap"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="西江月" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="夜行黄沙道中" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="明月别枝惊鹊七八个星天外" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="清风半夜鸣蝉明月别枝惊鹊七八个星天外" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="稻花香里说丰年" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="听取蛙声一片" />
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="七八个星天外" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
