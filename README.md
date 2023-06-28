@@ -32,3 +32,5 @@
 
 🐴ConstraintLayoutFlowTest是谷歌官方的flexbox流式布局，很好用。还用了一个ConstraintLayout的flow模式，不过有bug。
 
+🐴DiffUtilTest是采用gpt的方案来使用DiffUtil。
+
