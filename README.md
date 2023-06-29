@@ -34,3 +34,4 @@
 
 🐴DiffUtilTest是采用gpt的方案来使用DiffUtil。
 
+🐴SideMenuTest是子林讲的侧滑菜单，另外今天还重听了一遍网课，查缺补漏得复习了：1、DrawerLayout添加属性tools:openDrawer="start"，可以预览侧边栏效果。
