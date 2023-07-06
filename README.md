@@ -35,3 +35,5 @@
 🐴DiffUtilTest是采用gpt的方案来使用DiffUtil。
 
 🐴SideMenuTest是子林讲的侧滑菜单，另外今天还重听了一遍网课，查缺补漏得复习了：1、DrawerLayout添加属性tools:openDrawer="start"，可以预览侧边栏效果。
+
+🐴RoomTestguolin是仿照郭霖公众号，使用Kotlin创建了room数据库，并实现了升级数据库version并变换表结构的功能，但是升级的时候增加表失败了。
