@@ -36,6 +36,6 @@
 
 🐴SideMenuTest是子林讲的侧滑菜单，另外今天还重听了一遍网课，查缺补漏得复习了：1、DrawerLayout添加属性tools:openDrawer="start"，可以预览侧边栏效果。
 
-🐴RoomTestguolin是仿照郭霖公众号，使用Kotlin创建了room数据库，并实现了升级数据库version并变换表结构，和增加表的功能。刚开始升级的时候增加表失败了，
+🐴RoomTestguolin是仿照郭霖公众号，使用Kotlin创建了room数据库，并实现了升级数据库version并变换表结构，和增加表的功能。刚开始升级的时候增加表失败了，后来直接去room自己的实现里复制了创建表的语句，就成功了。
 
-后来直接去room自己的实现里复制了创建表的语句，就成功了。
+🐴OKPPrac是和享学Lance学的okhttp基本用法。
