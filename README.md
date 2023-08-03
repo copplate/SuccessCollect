@@ -39,3 +39,5 @@
 🐴RoomTestguolin是仿照郭霖公众号，使用Kotlin创建了room数据库，并实现了升级数据库version并变换表结构，和增加表的功能。刚开始升级的时候增加表失败了，后来直接去room自己的实现里复制了创建表的语句，就成功了。
 
 🐴OKPPrac是和享学Lance学的okhttp基本用法。
+
+🐴CacheCountViewPager2是把viewpager2里的recyclerview获取出来，就可以和操控recyclerview一样操控viewpager2了，比如修改缓存池大小
