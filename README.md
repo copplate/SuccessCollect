@@ -1,4 +1,4 @@
-💎所用Android studio版本为2021.2.1 Patch2。
+🍻所用Android studio版本为2021.2.1 Patch2。
 
 
 
@@ -40,4 +40,10 @@
 
 🐴OKPPrac是和享学Lance学的okhttp基本用法。
 
-🐴CacheCountViewPager2是把viewpager2里的recyclerview获取出来，就可以和操控recyclerview一样操控viewpager2了，比如修改缓存池大小
+🐴CacheCountViewPager2是
+
+​		💎把viewpager2里的recyclerview获取出来，就可以和操控recyclerview一样操控viewpager2了，比如修改缓存池大小。
+
+​		💎使用lifecycle让viewpager2内的fragment感知到它所依赖的fragment的生命周期。
+
+​		💎也可以在外层fragment通过vp2.getCurrentItem();来指定修改哪个内层fragment。
