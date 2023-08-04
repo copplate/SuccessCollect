@@ -47,3 +47,5 @@
 ​		💎使用lifecycle让viewpager2内的fragment感知到它所依赖的fragment的生命周期。
 
 ​		💎也可以在外层fragment通过vp2.getCurrentItem();来指定修改哪个内层fragment。
+
+​		💎同时验证了在FragmentContainerView内的fragment是可以完全跟随Fragment的生命周期的，但是FragmentContainerView内的vp2的Fragment则不能  			 感知到，因为这时，Fragment的生命周期依赖于它所依附的Activity来触发。
