@@ -49,3 +49,5 @@
 ​		💎也可以在外层fragment通过vp2.getCurrentItem();来指定修改哪个内层fragment。
 
 ​		💎同时验证了在FragmentContainerView内的fragment是可以完全跟随Fragment的生命周期的，但是FragmentContainerView内的vp2的Fragment则不能  			 感知到，因为这时，Fragment的生命周期依赖于它所依附的Activity来触发。
+
+🐴ZilinChangeProfilePic是子林在2021.5写的系统原生的相册图片获取方式。要记得添加android:requestLegacyExternalStorage="true"。
