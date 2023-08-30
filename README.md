@@ -53,3 +53,7 @@
 🐴ZilinChangeProfilePic是子林在2021.5写的系统原生的相册图片获取方式。要记得添加android:requestLegacyExternalStorage="true"。
 
 🐴UCropPrac是Ucrop的简单使用，不要忘记改proguard-rules.pro。
+
+🐴FragmentGoActivityTest是，在使用ucrop的时候没有看到它的报错是<font color=#FF0000>java.lang.IllegalArgumentException: Invalid Uri schemenull</font>，还以为是Fragment的问题，专门写了一个项目看看，能不能在Fragment的onActivityResult里前往另一个Activity。
+
+🐴RecyAndExoMy是用recyclerview和exoplayer来列表播放视频，通过rlv.addOnChildAttachStateChangeListener来获取暂停视频的时机。
