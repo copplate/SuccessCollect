@@ -57,3 +57,5 @@
 🐴FragmentGoActivityTest是，在使用ucrop的时候没有看到它的报错是<font color=#FF0000>java.lang.IllegalArgumentException: Invalid Uri schemenull</font>，还以为是Fragment的问题，专门写了一个项目看看，能不能在Fragment的onActivityResult里前往另一个Activity。
 
 🐴RecyAndExoMy是用recyclerview和exoplayer来列表播放视频，通过rlv.addOnChildAttachStateChangeListener来获取暂停视频的时机。
+
+🐴RxRetrofitPrac是利用Rxjava + Retrofit进行网络请求，重点是不要忘记添加.addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //RxJava3 适配器。
