@@ -42,6 +42,8 @@
 
 🐴CacheCountViewPager2是
 
+​		💎在Activity里使用了databinding。
+
 ​		💎把viewpager2里的recyclerview获取出来，就可以和操控recyclerview一样操控viewpager2了，比如修改缓存池大小。
 
 ​		💎使用lifecycle让viewpager2内的fragment感知到它所依赖的fragment的生命周期。
@@ -59,3 +61,5 @@
 🐴RecyAndExoMy是用recyclerview和exoplayer来列表播放视频，通过rlv.addOnChildAttachStateChangeListener来获取暂停视频的时机。
 
 🐴RxRetrofitPrac是利用Rxjava + Retrofit进行网络请求，重点是不要忘记添加.addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //RxJava3 适配器。
+
+🐴GaodePrac是高德地图sdk的一些基本Api使用。
