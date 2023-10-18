@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-.aar
+/app/libs/.aar
