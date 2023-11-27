@@ -28,7 +28,7 @@
 
 🐴SlidePreLoadPrac2通过监听SimpleExoplayer的加载进度，获得预加载下一个SimpleExoplayer的时机。
 
-🐴SpinnerPrac1,问的gpt，通过补间动画，制作了一个旋转箭头弹出三个按钮的动画效果
+🐴自定义View，SpinnerPrac1,问的gpt，通过补间动画，制作了一个旋转箭头弹出三个按钮的动画效果
 
 🐴ConstraintLayoutFlowTest是谷歌官方的flexbox流式布局，很好用。还用了一个ConstraintLayout的flow模式，不过有bug。
 
@@ -63,3 +63,11 @@
 🐴RxRetrofitPrac是利用Rxjava + Retrofit进行网络请求，重点是不要忘记添加.addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //RxJava3 适配器。
 
 🐴GaodePrac是高德地图sdk的一些基本Api使用。
+
+🐴自定义View，CityChoose是选择城市的一个小功能。
+
+🐴自定义View，LeftSlideDelete是RecyclerView左滑删除。
+
+🐴OkpAndNettyChat是一个简单的Okhttp实现webSocket聊天。
+
+🐴OkpSocketPrac是一个简单的Okhttp实现webSocket连接。
