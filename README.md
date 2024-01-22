@@ -73,3 +73,5 @@
 🐴OkpSocketPrac是一个简单的Okhttp实现webSocket连接。
 
 🐴ProductFlavorsTest是利用不同风味，来在app内动态获取不同的字符串。
+
+🐴AnimationTest是Android动画：缩放、从上到下、z轴旋转，字体浮现。
