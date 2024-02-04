@@ -76,7 +76,7 @@
 
 🐴AnimationTest是Android动画：缩放、从上到下、z轴旋转，字体浮现。
 
-🐴高级View，BottomSheetBehaviorPrac，原来只要用CoordinatorLayout和BottomSheetBehavior就可以实现拖拽改变底部高度啊。
+🐴高级View，BottomSheetBehaviorPrac，是模仿抖音的评论框，原来只要用CoordinatorLayout和BottomSheetBehavior就可以实现拖拽改变底部高度啊。
 
 🐴高级View，ImmersionStatusBarPrac是模仿@[孙强 Jimmy]  (https://jimmysun.blog.csdn.net/)[从 0 到 1 优雅实现沉浸式状态栏_setsystemuivisibility flag 沉浸式-CSDN博客](https://jimmysun.blog.csdn.net/article/details/100065336?spm=1001.2014.3001.5502)
 
